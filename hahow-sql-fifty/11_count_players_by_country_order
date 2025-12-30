@@ -1,0 +1,13 @@
+-- 題目 11
+-- 承接上一題，將各國球員數量由多至少排序
+--
+-- 實務用途（QA / 資料檢查）：
+-- 快速找出主要來源國家
+-- 也可用來發現異常大量或過少的分類
+
+SELECT
+    country,
+    COUNT(*) AS player_count
+FROM players
+GROUP BY country
+ORDER BY player_count DESC;
