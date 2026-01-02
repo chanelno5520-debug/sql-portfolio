@@ -9,7 +9,7 @@
 ## 使用技術
 - SQL（SQLite）
 - SELECT / WHERE
-- DISTINCT
+- DISTINCT / LIKE / IN
 - GROUP BY / COUNT / SUM
 - ORDER BY
 - 日期處理（STRFTIME）
@@ -58,24 +58,24 @@
 ---
 
 ### 09_calculate_bmi.sql
-- 計算 BMI 並格式化結果
-- 驗證衍生欄位計算公式
+- 依據身高與體重欄位計算 BMI 並格式化結果
+- 驗證衍生欄位計算公式是否正確
 
 ### 10_calculate_assist_turnover_ratio.sql
 - 計算 Assist / Turnover Ratio
-- 檢查型態轉換與除以零問題
+- 驗證型態轉換（CAST）與除以零等常見資料問題
 
 ### 11_distinct_year_month.sql
-- 由日期欄位萃取不重複的年月
-- 檢查時間序列資料完整性
+- 由日期欄位萃取不重複的年月（YYYY-MM）
+- 用於檢查時間序列資料是否完整、是否缺月份
 
 ### 12_sum_presidential_votes.sql
-- 彙總總統副總統選舉總投票數
-- 用於 KPI 對帳與資料驗證
+- 彙總總統副總統選舉的總投票數
+- 常見於系統測試中的 KPI 對帳情境
 
 ### 13_sum_covid_totals.sql
-- 彙總 COVID-19 總確診、痊癒、死亡人數
-- 用於資料完整性檢查
+- 彙總 COVID-19 的總確診、總痊癒、總死亡人數
+- 用於高層級資料完整性與合理性檢查
 
 ---
 
@@ -90,6 +90,28 @@
 ### 16_find_top_ten_ast_to_ratio.sql
 - 計算並排序 Assist / Turnover Ratio
 - 驗證計算欄位、型態轉換與資料合理性
+
+---
+
+### 17_filter_taiwan_from_time_series.sql
+- 從 time_series 篩選出 Taiwan 的觀測值
+- 常用於資料載入後的國別資料驗證
+
+### 18_filter_movies_released_in_1994.sql
+- 從 movies 篩選上映年份為 1994 的電影
+- 驗證年份欄位篩選與資料完整性
+
+### 19_filter_three_male_actors_by_in.sql
+- 從 actors 篩選指定三位演員（IN）
+- 驗證多值條件比對與命名一致性
+
+### 20_filter_movies_by_two_directors.sql
+- 篩選兩位導演作品並排序（IN + ORDER BY）
+- 常用於清單型報表與資料對帳
+
+### 21_match_country_name_pattern_land.sql
+- 從 lookup_table 篩選名稱包含 'land' 的國家（LIKE）
+- 常用於資料探索與分類值驗證
 
 ---
 
