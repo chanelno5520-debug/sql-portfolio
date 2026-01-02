@@ -46,43 +46,50 @@
 - 依公式計算 Active 病例數  
   `Active = Confirmed - Recovered - Deaths`
 - 用於驗證資料欄位間的邏輯一致性
-- 常見於系統測試與資料匯入後檢查
 
 ### 07_calculate_bmi.sql
 - 使用身高與體重計算 BMI
-- 用於資料合理性檢查與異常值偵測前置分析
+- 用於資料合理性檢查
 
 ### 08_distinct_conf_div.sql
-- 將 confName 與 divName 組合成單一分類欄位
-- 使用 DISTINCT 去除重複結果
-- 用於檢查聯盟與分區分類是否正確
+- 合併 confName 與 divName 並去除重複分類
+- 用於檢查聯盟與分區資料正確性
 
 ---
 
 ### 09_calculate_bmi.sql
-- 依據身高與體重欄位計算 BMI 並格式化結果
-- 驗證衍生欄位計算公式是否正確
-- 常見於資料合理性檢查與分析前置處理
+- 計算 BMI 並格式化結果
+- 驗證衍生欄位計算公式
 
 ### 10_calculate_assist_turnover_ratio.sql
 - 計算 Assist / Turnover Ratio
-- 驗證數值型欄位運算與型態轉換（CAST）
-- 可用於檢查除以零、NULL 值等常見資料問題
+- 檢查型態轉換與除以零問題
 
 ### 11_distinct_year_month.sql
-- 由日期欄位萃取不重複的年月（YYYY-MM）
-- 用於檢查時間序列資料是否完整、是否缺月份
-- 常見於趨勢分析與資料品質驗證
+- 由日期欄位萃取不重複的年月
+- 檢查時間序列資料完整性
 
 ### 12_sum_presidential_votes.sql
-- 彙總總統副總統選舉的總投票數
-- 用於驗證資料匯入後的總量是否合理
-- 常見於系統測試中的 KPI 對帳情境
+- 彙總總統副總統選舉總投票數
+- 用於 KPI 對帳與資料驗證
 
 ### 13_sum_covid_totals.sql
-- 彙總 COVID-19 的總確診、總痊癒、總死亡人數
-- 用於高層級資料完整性與合理性檢查
-- 常見於資料管線或報表輸出前驗證
+- 彙總 COVID-19 總確診、痊癒、死亡人數
+- 用於資料完整性檢查
+
+---
+
+### 14_find_top_ten_ppg.sql
+- 找出生涯平均得分（PPG）最高的前 10 位球員
+- 驗證排序與數值欄位正確性
+
+### 15_find_top_ten_daily_cases.sql
+- 找出單日新增確診數最高的前 10 筆紀錄
+- 常見於資料極值檢查與趨勢分析
+
+### 16_find_top_ten_ast_to_ratio.sql
+- 計算並排序 Assist / Turnover Ratio
+- 驗證計算欄位、型態轉換與資料合理性
 
 ---
 
