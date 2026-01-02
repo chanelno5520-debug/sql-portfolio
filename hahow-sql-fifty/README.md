@@ -11,6 +11,7 @@
 - SELECT / WHERE
 - DISTINCT / LIKE / IN
 - GROUP BY / COUNT / SUM
+- HAVING / BETWEEN
 - ORDER BY
 - 日期處理（STRFTIME）
 - 衍生欄位計算（Calculated Fields）
@@ -112,6 +113,30 @@
 ### 21_match_country_name_pattern_land.sql
 - 從 lookup_table 篩選名稱包含 'land' 的國家（LIKE）
 - 常用於資料探索與分類值驗證
+
+---
+
+## 新增：分組聚合與 HAVING（25–29）
+
+### 25_count_movies_by_year.sql
+- 依 release_year 統計每年的電影數（GROUP BY + COUNT）
+- 常見於報表分年統計與資料完整性檢查
+
+### 26_count_movies_by_year_having.sql
+- 篩出每年至少 5 部電影的年份（HAVING）
+- 示範聚合後篩選口徑（避免 WHERE/HAVING 用錯）
+
+### 27_sum_votes_by_candidate.sql
+- 依候選人彙總總得票數（SUM + GROUP BY）
+- 常用於 KPI 對帳與資料驗證
+
+### 28_count_players_by_country.sql
+- 依 country 統計球員數並排序
+- 常用於分類分布檢查與資料探索
+
+### 29_count_players_by_country_having_between.sql
+- 篩出球員數介於 2~9 的國家（HAVING + BETWEEN）
+- 常用於中小樣本分類的檢查與抽樣
 
 ---
 
