@@ -15,6 +15,7 @@
 - ORDER BY
 - 日期處理（STRFTIME）
 - 衍生欄位計算（Calculated Fields）
+- 子查詢（Subquery）
 - 基礎資料品質檢查（Data Validation）
 
 ---
@@ -116,7 +117,7 @@
 
 ---
 
-## 新增：分組聚合與 HAVING（25–29）
+## 分組聚合與 HAVING（25–29）
 
 ### 25_count_movies_by_year.sql
 - 依 release_year 統計每年的電影數（GROUP BY + COUNT）
@@ -137,6 +138,30 @@
 ### 29_count_players_by_country_having_between.sql
 - 篩出球員數介於 2~9 的國家（HAVING + BETWEEN）
 - 常用於中小樣本分類的檢查與抽樣
+
+---
+
+## 子查詢 Subquery（30–34）
+
+### 30_find_tallest_and_shortest_players_subquery.sql
+- 用 MAX/MIN 子查詢找出身高最高與最矮球員（含並列）
+- 常用於極值驗證與資料探索
+
+### 31_player_nationality_percentage_subquery.sql
+- 計算各國籍球員佔比（各國 COUNT / 全體 COUNT）
+- 常用於分類分布與資料合理性檢查
+
+### 32_find_scoring_leader_ppg_subquery.sql
+- 找出 ppg 最高的場均得分王（MAX + 子查詢）
+- 常用於排名/冠軍類指標驗證
+
+### 33_brooklyn_nets_roster_subquery.sql
+- 用 teams 子查詢定位 Brooklyn Nets 的 teamId，再查 roster
+- 常用於關聯資料查詢與名單對帳
+
+### 34_votes_percentage_by_candidate_subquery.sql
+- 計算各候選人得票率（各候選人 SUM / 全體 SUM）
+- 常用於 KPI 比例、報表呈現與資料對帳
 
 ---
 
